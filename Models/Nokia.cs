@@ -7,8 +7,14 @@ namespace DesafioPOO.Models
         }
 
         public override void InstalarAplicativo(string nomeApp)
-        {
-            Console.WriteLine($"Instalando o aplicativo {nomeApp} no Nokia...");
+        {   
+            if(Ligado) {
+                Console.WriteLine($"Instalando o aplicativo {nomeApp} no Nokia...");
+                Aplicativos.Add(nomeApp);
+            }
+
+            else 
+                Console.WriteLine("Não foi possível instalar o app, pois o celular está desligado");
         }
     }
 }

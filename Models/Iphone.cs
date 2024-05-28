@@ -9,7 +9,13 @@ namespace DesafioPOO.Models
 
         public override void InstalarAplicativo(string nomeApp)
         { 
-            Console.WriteLine($"Instalando o aplicativo {nomeApp} no Iphone...");
+             if(Ligado) {
+                Console.WriteLine($"Instalando o aplicativo {nomeApp} no Iphone...");
+                Aplicativos.Add(nomeApp);
+            }
+
+            else 
+                Console.WriteLine("Não foi possível instalar o app, pois o celular está desligado");
         }
     }
 }
